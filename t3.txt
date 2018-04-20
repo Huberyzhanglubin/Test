@@ -1,0 +1,33 @@
+//类与函数引用
+#include <iostream>
+using namespace std;
+class Time
+{
+public:
+	int hour;
+	int minute;
+	int sec;
+
+};
+int main()
+{
+ void settime(Time&t);          //函数声明
+ void showtime(Time&t);         //函数声明
+ Time t1;                      //定义t1为Time类对象
+ settime(t1);                  //调用settime函数，向t1对象中的数据成员输入数据
+ showtime(t1);                 //调用showtime函数，输出t1对象中的数据
+ Time t2;
+ settime(t2);
+ showtime(t2);
+ return 0;
+}
+void settime(Time&t)           //定义函数settime，形参t是引用变量
+{
+ cin>>t.hour;     
+ cin>>t.minute;
+ cin>>t.sec;
+}
+void showtime(Time&t)
+{
+cout<<t.hour<<":"<<t.minute<<":"<<t.sec<<endl;
+}
